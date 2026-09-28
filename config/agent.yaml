@@ -1,0 +1,18 @@
+# AgentRegistry manifest
+id: "FIN-C2-025"
+name: "Investment Product Suitability Assessment Q&A Agent"
+namespace: "fin"
+version: "1.0.0"
+enabled: true
+category: "Cat 2"
+generation_mode: "deterministic"
+industry: "FIN"
+
+# Compatibility metadata; runtime behavior is implemented by the entry point below.
+base_type: "RAGAgent"
+class: "src.agent.InvestmentSuitabilityQAAgent"
+
+required_trust_level: "VERIFIED_EXTERNAL"
+requires:
+  secrets: []
+  extras: []

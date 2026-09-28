@@ -1,0 +1,9 @@
+max_retry: 3
+timeout_seconds: 30
+
+# Suitability-assessment runtime settings (see docs/02_design.md section 6).
+kb_path: ""
+escalate_risk_threshold: 4
+compliance_disclaimer: |
+  この情報は参考目的のみです。投資判断は必ず担当アドバイザーにご相談ください。
+  金融商品の購入は元本割れリスクがあります。

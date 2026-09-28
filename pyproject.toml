@@ -1,0 +1,37 @@
+[project]
+name = "fin-c2-025"
+version = "1.0.0"
+description = "Investment Product Suitability Assessment Q&A Agent — AgentCore Template"
+requires-python = ">=3.11"
+# AgentCore SDK (framework.*/shared.*) は pyproject 依存に含めない。released wheel
+# `agenticstar-agentcore==1.0.0` を別途 --extra-index-url で導入する（CI: run-tests
+# before_script / ローカル: 同コマンド）。本テンプレはドメインランタイム依存を持たない
+# （KnowledgeBase は stdlib のみ）。SDK v1.0.0 移行。
+dependencies = [
+    "agenticstar-agentcore[marketplace,openai]==1.0.3",]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.1.1",
+    "pytest-cov==5.0.0",
+    "pytest-asyncio==0.23.6",
+    "ruff==0.4.4",
+    "mypy==1.10.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+exclude = ["security_rules*", "tests*", "docs*", "scripts*"]
+
+[build-system]
+requires = ["setuptools==68.2.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
